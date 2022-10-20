@@ -29,12 +29,13 @@ def validate_data(values):
     Function to validate data entered by the user
     """
     try:
-        if len(values) !=6:
+        [int(value) for value in values]
+        if len(values) != 6:
             raise ValueError(
                 f"Exactly 6 values required, only {len(values)} were provided"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")  
+        print(f"Invalid data: {e}, please try again.\n")
 
 
 get_sales_data()
